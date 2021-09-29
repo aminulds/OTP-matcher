@@ -15,3 +15,19 @@ document.getElementById('otpGenerateBtn').addEventListener('click', function(){
     document.getElementById('otpDisplay').value = otp;
 })
 
+// Digit input
+function digit(inputDigit){
+    document.getElementById('keyDisplay').value += inputDigit;
+}
+
+// Cancel Input
+function cancelInput(){
+    document.getElementById('keyDisplay').value = '';
+}
+
+// Remove Digit
+function removeDigit(){
+    let keyDisplay = document.getElementById('keyDisplay').value;
+    keyDisplay =  keyDisplay.slice(0, -1);
+    document.getElementById('keyDisplay').value = keyDisplay;
+}
