@@ -63,6 +63,7 @@ document.getElementById('otpSubmit').addEventListener('click', function(){
             const numbersPad = document.querySelectorAll('.button');
             for (i = 0; i < numbersPad.length; i++){
                 numbersPad[i].style.cursor = 'not-allowed';
+                numbersPad[i].style.color = '#948d8d';
             }
 
             actionLeft.innerHTML = '0 try left!';
