@@ -35,6 +35,7 @@ document.getElementById('otpGenerateBtn').addEventListener('click', function(){
         numbersPad[i].style.color = '#fff';
     }
 
+    otpLimit = 4;
 
 })
 
