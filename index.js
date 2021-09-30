@@ -17,11 +17,33 @@ function pin(){
 document.getElementById('otpGenerateBtn').addEventListener('click', function(){
     const otp = pin();
     document.getElementById('otpDisplay').value = otp;
+
+
+    // Enable Disabled Number Pad
+    const otpSubmit = document.getElementById('otpSubmit');
+    otpSubmit.disabled = false;
+    otpSubmit.style.backgroundColor = '#495BC3';
+    otpSubmit.style.color = '#fff';
+    otpSubmit.style.cursor = 'pointer';
+
+    document.getElementById('keyDisplay').value = '';
+    actionLeft.style.display = 'none';
+
+    const numbersPad = document.querySelectorAll('.button');
+    for (i = 0; i < numbersPad.length; i++){
+        numbersPad[i].style.cursor = 'pointer';
+        numbersPad[i].style.color = '#fff';
+    }
+
+
 })
 
 // Digit input
 function digit(inputDigit){
-    document.getElementById('keyDisplay').value += inputDigit;
+    const inpValue =  document.getElementById('keyDisplay').value;
+    if (inpValue.length == 0 || inpValue.length < 4){
+        document.getElementById('keyDisplay').value += inputDigit;
+    }
 }
 
 // Cancel Input
