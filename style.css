@@ -87,6 +87,7 @@ color: #E0B612;
     padding: 10px 120px;
     border-radius: 5px;
     background: #495BC3;
+    /* background: #606897; */
     color: #fff;
 }
 .notify {
@@ -107,5 +108,7 @@ color: #E0B612;
 .action-left {
     color: #FF3C5F;
     margin-top: 10px;
+    /* display none */
+    display: none;
 }
 

@@ -1,3 +1,12 @@
+//inputField manual Disable
+function inpDisable(inpSelector){
+    const inpDisplay = document.getElementById(inpSelector);
+    inpDisplay.disabled = true;
+    inpDisplay.style.backgroundColor = '#3D4153';
+    inpDisplay.style.cursor = 'not-allowed';
+}
+inpDisable('otpDisplay');
+inpDisable('keyDisplay');
 
 // Generate Pin
 function pin(){
@@ -28,6 +37,9 @@ function removeDigit(){
 }
 
 // Submit OTP
+let otpLimit = 3;
+let actionLeft = document.querySelector('.action-left'); // Limit otp Submit
+
 document.getElementById('otpSubmit').addEventListener('click', function(){
     const generateOtp = parseInt(document.getElementById('otpDisplay').value);
     const inputOtp =  parseInt(document.getElementById('keyDisplay').value);
@@ -36,10 +48,36 @@ document.getElementById('otpSubmit').addEventListener('click', function(){
     if (generateOtp === inputOtp){
         warningMessages[1].style.display = 'block';
         warningMessages[0].style.display = 'none';
+        actionLeft.style.display = 'none';
     }
     else{
         warningMessages[0].style.display = 'block';
         warningMessages[1].style.display = 'none';
+
+        // otp Submit limit
+        if (otpLimit >= 1){
+            actionLeft.innerHTML = otpLimit + ' try left!';
+            actionLeft.style.display = 'block';
+        }
+        else{
+            const numbersPad = document.querySelectorAll('.button');
+            for (i = 0; i < numbersPad.length; i++){
+                numbersPad[i].style.cursor = 'not-allowed';
+            }
+
+            actionLeft.innerHTML = '0 try left!';
+            const otpSubmit = document.getElementById('otpSubmit');
+            otpSubmit.disabled = true;
+            otpSubmit.style.backgroundColor = '#606897';
+            otpSubmit.style.color = 'gray';
+            otpSubmit.style.cursor = 'not-allowed';
+            //remove warning message
+            warningMessages[0].style.display = 'none';
+        }
+        
+        otpLimit -= 1;
+
+
     }
     
 
