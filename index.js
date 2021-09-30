@@ -1,8 +1,3 @@
-// Generate Pin
-const warningMessages = document.querySelectorAll('.notify');
-for (i = 0; i < warningMessages.length; i++){
-    warningMessages[i].remove();
-}
 
 // Generate Pin
 function pin(){
@@ -31,3 +26,21 @@ function removeDigit(){
     keyDisplay =  keyDisplay.slice(0, -1);
     document.getElementById('keyDisplay').value = keyDisplay;
 }
+
+// Submit OTP
+document.getElementById('otpSubmit').addEventListener('click', function(){
+    const generateOtp = parseInt(document.getElementById('otpDisplay').value);
+    const inputOtp =  parseInt(document.getElementById('keyDisplay').value);
+
+    const warningMessages = document.querySelectorAll('.notify');
+    if (generateOtp === inputOtp){
+        warningMessages[1].style.display = 'block';
+        warningMessages[0].style.display = 'none';
+    }
+    else{
+        warningMessages[0].style.display = 'block';
+        warningMessages[1].style.display = 'none';
+    }
+    
+
+});

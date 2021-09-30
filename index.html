@@ -18,7 +18,7 @@
             </div>
             <div class="col-md-6">
                 <div class="input-section half-width">
-                    <input id="keyDisplay" class="form-control text-center" type="text" >
+                    <input id="keyDisplay" maxlength="4" class="form-control text-center" type="text" >
                     <div class="numbers">
                         <div class="calc-body">
                             <div class="calc-button-row">
@@ -42,14 +42,14 @@
                                 <div class="button" onclick="cancelInput()">C</div>
                             </div>
                             <div>
-                                <button type="submit" class="submit-btn">Submit</button>
+                                <button id="otpSubmit" type="submit" class="submit-btn">Submit</button>
                                 <p class="action-left">3 try left</p>
                             </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="notify-section">
+        <div class="notify-section pb-5">
             <p class="notify">❌ Pin Didn't Match, Please try again</p>
             <p class="notify">✅ Pin Matched... Secret door is opening for you</p>
         </div>
