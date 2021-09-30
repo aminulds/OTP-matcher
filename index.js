@@ -37,7 +37,7 @@ function removeDigit(){
 }
 
 // Submit OTP
-let otpLimit = 3;
+let otpLimit = 4;
 let actionLeft = document.querySelector('.action-left'); // Limit otp Submit
 
 document.getElementById('otpSubmit').addEventListener('click', function(){
@@ -77,9 +77,6 @@ document.getElementById('otpSubmit').addEventListener('click', function(){
         }
         
         otpLimit -= 1;
-
-
     }
-    
 
 });
